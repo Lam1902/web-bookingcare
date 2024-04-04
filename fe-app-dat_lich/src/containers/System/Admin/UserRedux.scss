@@ -1,0 +1,39 @@
+.form-background {
+  background-color: #1058a0; /* Màu nền bạn muốn sử dụng */
+  padding: 20px; /* Tạo khoảng cách giữa nội dung và viền của form */
+  border-radius: 10px; /* Độ cong của các góc form */
+  color: white;
+}
+
+.preview-img-container {
+    display: flex;
+  .lable-upImg {
+    display: block;
+    background: #b9b9b9;
+    text-align: center;
+    width: 100px;
+    height: 26px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: black;
+    padding: 3px;
+    margin-top: 6px;
+    &:hover {
+      background: #d3d3d3;
+    }
+
+    .icon-upImg {
+      margin-left: 4px;
+    }
+  }
+
+  .preview-image {
+    height: 100px;
+    width: 80%;
+    border: 1px solid rgb(255, 255, 255);
+    margin-left: 12px;
+    background: center center no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }
+}

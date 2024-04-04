@@ -1,0 +1,61 @@
+.about {
+  height: 450px;
+  // border: 1px solid red;
+  background: url('../../../assets/140309-background3.png');
+
+  .about-header {
+    text-align: center;
+    font-size: 24px; /* Đặt kích thước font là 24px hoặc bất kỳ kích thước bạn muốn */
+    font-weight: bold; /* Đặt đậm */
+    color: #000; /* Đặt màu văn bản là màu đen */
+    margin: 0 0 30px 0;
+
+  }
+
+  .about-body {
+    height: 80%;
+    display: flex;
+    margin: 0 50px;
+    .about-left {
+      width: 45%;
+      // border: 1px solid rgb(43, 192, 65);
+    }
+    .about-right {
+      width: 55%;
+      // border: 1px solid rgb(253, 12, 181);
+      display: flex;
+
+      .about-right-column {
+        flex: 1;
+        margin: 0 10px; /* Để tạo khoảng cách giữa các cột */
+        .about-rigth-item {
+          background-color: #f0f0f0;
+          padding: 10px;
+          margin-bottom: 10px; /* Để tạo khoảng cách giữa các mục */
+          text-align: center;
+          width: 50%;
+          border-radius: 30px;
+          margin: 12px auto 12px auto;
+          cursor: pointer;
+          img {
+            display: block;
+            width: 136px;
+            height: 39px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.home-footer {
+  height: 160px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  padding: 12px 0;
+  background: linear-gradient(rgba(104, 211, 238, 0.5), rgba(104, 211, 238, 0.5)), url('../../../assets/140309-background3.png');
+  a {
+    text-decoration: none;
+  }
+}

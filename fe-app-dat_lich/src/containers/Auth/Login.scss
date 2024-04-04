@@ -1,0 +1,86 @@
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    }
+    
+    @media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    }
+    @media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+
+    .btn-primary {
+        margin-right: 20px;
+        /* margin: 0 0 12px 0; */
+        padding: 4px 12px;
+        text-align: center;
+        line-height: normal;
+    }
+
+    .btn-primary:hover {
+       
+    }
+
+    .login-background {
+        background-color: rgb(196, 38, 38);
+        height: 100vh;
+    }
+    body {
+        background-image: url('../../store/image/background-4232859_1280.webp');
+    }
+    .card-body-tong {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    }
+    .div-password{
+        position: relative;
+    }
+
+    .i {
+        position: absolute;
+    right: 10px;
+    top: 11px;
+    cursor: pointer;
+    }
+
+    .login-with {
+        margin-top: -35px;
+    margin-bottom: 24px;
+    /* display: flow-root; */
+    text-align: center;
+    }
+    .icon-facebook {
+        margin: 0 12px;
+        font-size: 19px;
+        cursor: pointer;
+        background: #3636bd;
+        border-radius: 7px;
+        padding: 6px 10px;
+        color: white;
+    }
+    .icon-google {
+        margin: 0 12px;
+        font-size: 19px;
+        cursor: pointer;
+        background: #d64545;
+        border-radius: 7px;
+        padding: 6px 18px;
+        color: white;
+    }
+
+    .text-loginwith {
+        font-size: 12px;
+    }
+    }
+
