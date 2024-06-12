@@ -7,14 +7,14 @@ import {} from "@fortawesome/free-solid-svg-icons";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import specialtyImg from "../../../assets/doctor-img/155650-gs-ha-van-quyet.jpg";
 import * as actions from "../../../store/actions";
 import { LANGUAGES } from "../../../utils";
+import { withRouter } from 'react-router';
 const { Buffer } = require('buffer');
 
 
-
 class OutstandingDoctor extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -31,6 +31,10 @@ class OutstandingDoctor extends Component {
         arrDoctors: this.props.topDoctorRedux,
       });
     }
+  } 
+
+  handleViewDetailDoctor = (item) => {
+    this.props.history.push(`/detail-doctor/${item.id}`)
   }
 
   render() {
@@ -52,16 +56,16 @@ class OutstandingDoctor extends Component {
                 if(item.image) {
                   imageBase64 = new Buffer(item.image, 'base64').toString('binary')
                 }
-                console.log(imageBase64)
-                let nameVi = `${item.positionData.valueVi}, ${item.fistName} ${item.lastName}`
-                let nameEn = `${item.positionData.valueEn}, ${item.fistName} ${item.lastName}`
+                // console.log(imageBase64)
+                let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.fistName} `
+                let nameEn = `${item.positionData.valueEn},  ${item.fistName} ${item.lastName}`
 
                 return (
-                  <div className="outstandingdoctor-body" key={index}>
-                    <div className="img-doctor" 
+                  <div className="outstandingdoctor-body" key={index} onClick={ () => this.handleViewDetailDoctor(item)}>
+                    <div className="img-doctor"
                     style={{backgroundImage: `url(${imageBase64})` }} />
-                    <div>{language === LANGUAGES.VI ? nameVi : nameEn}</div>
-                    <div>chuyên khoa</div>
+                    <div style={{marginTop:12,fontSize:16}} >{language === LANGUAGES.VI ? nameVi : nameEn}</div>
+                    {/* <div>chuyên khoa</div> */}
                   </div>
                 );
               })}
@@ -87,4 +91,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OutstandingDoctor);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OutstandingDoctor));

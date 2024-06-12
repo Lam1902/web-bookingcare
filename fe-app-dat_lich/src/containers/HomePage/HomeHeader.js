@@ -17,11 +17,19 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {LANGUAGES} from "../../utils/constant"
 import {changeLanguage} from "../../store/actions"
+import { withRouter } from 'react-router';
+import logo from '../../assets/logo-about/Screenshot 2024-06-12 145646.png';  
 
 class HomeHeader extends Component {
 
   changeLanguage = (language) => {
     this.props.changeLanguageAppRedux(language)
+  }
+
+  returnHome = () => {
+    if(this.props.history) {
+      this.props.history.push('/home')
+    }
   }
 
   render() {
@@ -33,14 +41,17 @@ class HomeHeader extends Component {
         <div className="home-header-container">
           <div className="home-header-content">
             <div className="left-content">
+              <div className="content-lt">
               <FontAwesomeIcon icon={faBars} className="icon-bars" />
-              <div className="logo">
-                <FontAwesomeIcon
+              <div className="logo" onClick={() => this.returnHome()}>
+                {/* <FontAwesomeIcon
                   icon={faSuitcaseMedical}
                   style={{ color: "#d01111" }}
                   className="logo-icon"
-                />
-                <h2 className="logo-text">BookingCare</h2>
+                /> */}
+                {/* <h2 className="logo-text"  >BookingCare</h2> */}
+                <img src={logo} alt="logo" className="logo-img" />
+              </div>
               </div>
             </div>
             <div className="center-content">
@@ -86,6 +97,7 @@ class HomeHeader extends Component {
             </div>
           </div>
         </div>
+        {this.props.isShowBanner === true &&
         <div className="home-header-banner">
             <div className="banner-top">
             <div className="banner-title">
@@ -140,6 +152,7 @@ class HomeHeader extends Component {
             </div>
             </div>
         </div>
+  }
       </React.Fragment>
     );
   }
@@ -160,4 +173,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeHeader));

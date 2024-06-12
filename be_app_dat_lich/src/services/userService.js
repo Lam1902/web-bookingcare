@@ -30,7 +30,7 @@ let handleUserLogin = async (email, password) => {
 
             if (checkE) {
                 let userData = await db.User.findOne({
-                    attributes: ['email', 'password', 'roleId','fistName','lastName'],
+                    attributes: ['id','email', 'password', 'roleId','fistName','lastName'],
                     where: { email: email },
                     raw: true
                 });
@@ -219,12 +219,12 @@ let getAllCodeService = (typeInput) => {
                 res.data = allcode
                 resolve(res)
             }
-           
         }catch(e){
             reject(e)
         }
     })
 }
+
 module.exports = {
     handleUserLogin,
     getAllUsers,

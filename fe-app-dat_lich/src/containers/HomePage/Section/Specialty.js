@@ -1,60 +1,74 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { FormattedMessage } from "react-intl";
 import "./Specialty.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {} from "@fortawesome/free-solid-svg-icons";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import specialtyImg from "../../../assets/specailty/101627-co-xuong-khop.png"
-import thankinh from "../../../assets/specailty/101739-than-kinh.png"
-import tieuhoa from "../../../assets/specailty/101713-tieu-hoa.png"
-import timmach from "../../../assets/specailty/101713-tim-mach.png"
-import taimuihong from "../../../assets/specailty/101713-tai-mui-hong.png"
-import cotsong from "../../../assets/specailty/101627-cot-song.png"
-
-
+import { getAllSpecialty } from "../../../services/userService";
+import {withRouter} from 'react-router'
 
 class Specialty extends Component {
- 
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataSpecialty: [],
+      isOpenModal: false
+    };
+  }
+
+  async componentDidMount() {
+    let res = await getAllSpecialty();
+    if (res && res.errCode === 0) {
+      this.setState({
+        dataSpecialty: res.data ? res.data : [],
+      });
+    }
+  }
+
+  handleClickSpecialty = (item) => {
+    this.props.history.push(`/detail-specialty/${item.id}`)
+  }
+
+  closeBookingClose = () => {
+    this.setState({
+      isOpenModal: false
+    });
+  }
+
+
   render() {
+    let { dataSpecialty } = this.state;
+    console.log('check data chuyen khoa: ', dataSpecialty)
     return (
       <div className="section-specialty">
         <div className="specialty-content">
           <div className="specialty-header">
-              <span>Chuyên khoa phổ biến</span>
-              <button>Xem thêm </button>
+            <span>Chuyên khoa phổ biến</span>
+            <button>Xem thêm</button>
           </div>
-          <Slider {...this.props.settings}>
-            <div className="specialty-body" >
-              <img src={specialtyImg} />
-              <div>Cơ xương khớp </div>
-            </div >
-            <div className="specialty-body" >
-              <img src={thankinh} />
-              <div>Thần kinh</div>
-            </div >
-            <div className="specialty-body" >
-              <img src={tieuhoa} />
-              <div>Tiêu hóa</div>
-            </div >
-            <div className="specialty-body" >
-              <img src={timmach} />
-              <div>Tim mạch</div>
-            </div >
-            <div className="specialty-body" >
-              <img src={taimuihong} />
-              <div>Tai mũi họng</div>
-            </div >
-            <div className="specialty-body" >
-              <img src={cotsong} />
-              <div>Cột sống</div>
-            </div >
-            
-          </Slider>
+          <div className="specialty-body">
+            <Slider {...this.props.settings}>
+              {dataSpecialty &&
+                dataSpecialty.length > 0 &&
+                dataSpecialty.map((item, index) => {
+                  return (
+                    <div
+                      className="section-customize specialty-child"
+                      key={index}
+                      onClick={() => this.handleClickSpecialty(item)}
+                    >
+                      <div className="bg-image section-specialty">
+                        <img src={`data:image/png;base64,`+item.image} alt="Ảnh" />
+                      </div>
+                      <div className="specialty-name">{item.name}</div>
+                    </div>
+                  );
+                })}
+            </Slider>
+          </div>
         </div>
       </div>
+      
     );
   }
 }
@@ -69,4 +83,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
+export default withRouter( connect(mapStateToProps, mapDispatchToProps)(Specialty));

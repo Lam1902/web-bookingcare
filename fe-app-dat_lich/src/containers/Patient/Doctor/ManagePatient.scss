@@ -1,0 +1,58 @@
+.manage-patient-container {
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+
+  .manage-patient-table {
+    background: #0071ba;
+    padding: 12px;
+    border-radius: 12px;
+  }
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .table-responsive {
+    margin-top: 20px;
+  }
+
+  .btn-action {
+    display: flex;
+    // width: 20%;
+    .send-bill {
+      background: rgb(191, 36, 36);
+      cursor: pointer;
+      margin-right: 10px;
+      color: rgb(189, 189, 189);
+
+      width: 9rem;
+      height: 4rem;
+      text-align: center;
+      font-size: 10px;
+    }
+
+    .confirm {
+      background: green;
+      cursor: pointer;
+      margin-right: 10px;
+      color: rgb(197, 197, 197);
+
+      width: 9rem;
+      // height: 3rem;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .confirm:hover {
+      color: #ffffff;
+      background: rgb(1, 151, 1);
+    }
+
+    .send-bill:hover {
+      color: #ffffff;
+      background: rgb(212, 44, 44);
+    }
+  }
+}

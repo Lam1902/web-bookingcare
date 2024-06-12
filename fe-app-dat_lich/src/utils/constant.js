@@ -3,7 +3,11 @@ export const path = {
     HOMEPAGE:'/home',
     LOGIN: '/login',
     LOG_OUT: '/logout',
-    SYSTEM: '/system'
+    SYSTEM: '/system',
+    DETAIL_DOCTOR:'/detail-doctor/:id',
+    VERIFY_EMAIL_BOOKING: '/verify-booking',
+    DETAIL_SPECIALTY: '/detail-specialty/:id',
+    DETAIL_CLINIC: '/detail-clinic/:id'
 };
 
 export const LANGUAGES = {
@@ -25,4 +29,10 @@ export const dateFormat = {
 export const YesNoObj = {
     YES: 'Y',
     NO: 'N'
+}
+
+export const USER_ROLE = {
+    ADMIN: 'R1',
+    DOCTOR:'R2',
+    PATIENT:'R3',
 }

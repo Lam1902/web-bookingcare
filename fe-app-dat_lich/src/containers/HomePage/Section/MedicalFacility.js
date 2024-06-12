@@ -7,14 +7,40 @@ import {} from "@fortawesome/free-solid-svg-icons";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import specialtyImg from "../../../assets/medical-facility/benh-vien-y-co-truyen.jpg"
+import { getAllClinic } from "../../../services/userService";
+import {withRouter} from 'react-router'
 
 
 
 class MedicalFacility extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      listClinic: []
+    }
+  }
+
+  async componentDidMount  () {
+    let res = await getAllClinic()
+    if(res && res.errCode === 0 ) {
+      this.setState({
+        listClinic: res.data ? res.data : []
+      })
+    }
+  }
+
+  handleViewDetailClinic = (clinic) => {
+    if(this.props.history) {
+      this.props.history.push(`/detail-clinic/${clinic.id}`)
+    }
+  }
  
   render() {
 
+    let {listClinic} = this.state
+    console.log('all clinic: ', listClinic)
     return (
       <div className="section-medical">
         <div className="medical-content">
@@ -22,33 +48,23 @@ class MedicalFacility extends Component {
               <span>Cơ sở y tế nổi bật</span>
               <button>Xem thêm </button>
           </div>
+          <div className="medical-body" >
           <Slider {...this.props.settings}>
-            <div className="medical-body" >
-              <img src={specialtyImg} />
-              <div>Bệnh viện đa khoa 1</div>
-            </div >
-            <div className="medical-body" >
-              <img src={specialtyImg} />
-              <div>Bệnh viện đa khoa 2</div>
-            </div >
-            <div className="medical-body" >
-              <img src={specialtyImg} />
-              <div>Bệnh viện đa khoa 3</div>
-            </div >
-            <div className="medical-body" >
-              <img src={specialtyImg} />
-              <div>Bệnh viện đa khoa 4</div>
-            </div >
-            <div className="medical-body" >
-              <img src={specialtyImg} />
-              <div>Bệnh viện đa khoa 5 </div>
-            </div >
-            <div className="medical-body" >
-              <img src={specialtyImg} />
-              <div>Bệnh viện đa khoa 6</div>
-            </div >
-            
+            {listClinic && listClinic.length > 0 
+            && listClinic.map((item, index) => {
+              return(
+                <div className="clinic"
+                key={index}
+                onClick={() => this.handleViewDetailClinic(item)}
+                >
+               <img src={`data:image/png;base64,`+item.image} alt="Ảnh" />
+                  <div className="clinic-name">{item.name}</div>
+                </div>
+              )
+            })
+            }
           </Slider>
+            </div >
         </div>
       </div>
     );
@@ -65,4 +81,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MedicalFacility);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MedicalFacility));

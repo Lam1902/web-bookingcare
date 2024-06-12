@@ -1,0 +1,78 @@
+.detail-specialty-container {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  .detail-specialty-body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    .description-specialty {
+      margin-top: 100px;
+    }
+  }
+  
+  .description-specialty {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .each-doctor {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .each-doctor-left,
+  .each-doctor-right {
+    width: 48%;
+    padding: 20px;
+  }
+  
+  .profileDoctor {
+    margin-bottom: 20px;
+  }
+  
+  .doctor-schedule,
+  .doctor-extra {
+    margin-bottom: 20px;
+  }
+  
+  .each-doctor-left {
+    border-right: 1px solid #f0f0f0;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 768px) {
+    .each-doctor {
+      flex-direction: column;
+    }
+  
+    .each-doctor-left,
+    .each-doctor-right {
+      width: 100%;
+      border-right: none;
+    }
+  }
+  

@@ -96,13 +96,18 @@ class Login extends Component {
         };
     }
 
+    // handlerKeyDown = (event) => {
+    //     if(event.key === 'Enter' || event.keyCode === 13) {
+    //         this.processLogin()
+    //     }
+    // }
     render() {
         const { username, password, loginError } = this.state;
         const { lang } = this.props;
 
         return (
             <div className="login-wrapper">
-                <div className="login-container">
+                <div className="login-container ">
                     <div className="form_login">
                         <h2 className="title">
                             <FormattedMessage id="login.login" />
@@ -130,6 +135,7 @@ class Login extends Component {
                                 className="form-control"
                                 value={password}
                                 onChange={this.onPasswordChange}
+                                onKeyDown={(event)=> this.handlerKeyDown(event)}
                             />
                         </div>
 

@@ -6,8 +6,11 @@
     background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
     
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    background: linear-gradient(to right, #2e33ed, #1d52bc, #3a3ea1, #030327);
+
     }
+
+ 
     
     @media (min-width: 768px) {
     .gradient-form {
@@ -16,8 +19,8 @@
     }
     @media (min-width: 769px) {
     .gradient-custom-2 {
-    border-top-right-radius: .3rem;
-    border-bottom-right-radius: .3rem;
+
+    border: none
     }
 
     .btn-primary {
@@ -33,8 +36,12 @@
     }
 
     .login-background {
-        background-color: rgb(196, 38, 38);
-        height: 100vh;
+        background-image: url('../../assets/images/desktop-wallpaper-medical-medical-laptop.jpg');
+
+    background-repeat: no-repeat;
+    background-size: cover; /* Đảm bảo ảnh phủ toàn bộ kích thước của phần tử */
+    background-position: center; /* Đặt ảnh ra giữa */
+    height: 100vh;
     }
     body {
         background-image: url('../../store/image/background-4232859_1280.webp');
@@ -83,4 +90,10 @@
         font-size: 12px;
     }
     }
-
+.login-container {
+    background-color: rgba(255, 255, 255, 0.5);
+.form_login {
+    border: none !important;
+    backdrop-filter: blur(5px); /* Độ mờ dần cho hình nền */
+}
+}

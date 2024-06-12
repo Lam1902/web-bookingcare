@@ -15,13 +15,18 @@ import { path } from "../utils";
 
 import Home from "../routes/Home";
 import Login from "./Auth/Login";
-import Header from "./Header/Header";
 import System from "../routes/System";
 
-import { CustomToastCloseButton } from "../components/CustomToast";
+// import { CustomToastCloseButton } from "../components/CustomToast";
 import ConfirmModal from "../components/ConfirmModal";
 import HomePage from "./HomePage/HomePage";
 import CustomScrollbars from "../components/CustomScrollbars";
+import DetailDoctor from "./Patient/Doctor/DetailDoctor";
+import Doctor from "../routes/Doctor";
+
+import VerifyEmail from "./Patient/VerifyEmail.js"
+import DetailSpecialty_modal from "./HomePage/Section/Modal/DetailSpecialty_modal.js";
+import DetailClinic from "./Patient/Clinic/DetailClinic.js";
 
 class App extends Component {
   handlePersistorState = () => {
@@ -61,7 +66,17 @@ class App extends Component {
                     path={path.SYSTEM}
                     component={userIsAuthenticated(System)}
                   />
+                  <Route
+                    path={"/doctor"}
+                    component={userIsAuthenticated(Doctor)}
+                  />
+
                   <Route path={path.HOMEPAGE} component={HomePage} />
+                  <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
+                  <Route path={path.VERIFY_EMAIL_BOOKING} component={VerifyEmail} />
+                  <Route path={path.DETAIL_SPECIALTY} component={DetailSpecialty_modal} />
+                  <Route path={path.DETAIL_CLINIC} component={DetailClinic} />
+
                 </Switch>
               </CustomScrollbars>
             </div>
@@ -78,8 +93,6 @@ class App extends Component {
               pauseOnHover
               theme="light"
             />
-
-       
           </div>
         </Router>
       </Fragment>

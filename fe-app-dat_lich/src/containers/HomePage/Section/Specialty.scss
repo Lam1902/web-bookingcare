@@ -1,85 +1,71 @@
 .section-specialty {
-  height: 300px;
-//   border: 1px solid red;
-  background: #ffffff;
+  padding: 20px 0;
+  background-color: #f5f5f5;
+  cursor: pointer;
 
   .specialty-content {
-    margin: 20px 50px;
-    width: 80%;
-    margin: 0 auto
-  }
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 
-  .specialty-header {
-    height: 50px;
-    // border: 1px solid black;
-    display: flex;
-    flex-direction: column-reverse;
-    position: relative;
+    .specialty-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
 
-    button {
-        width: 10%;
-        position: absolute;
-        right: 0;
-        top: 0;
-        background-color: #68d3ee;
-        border-radius: 19px;
+      span {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
         border: none;
+        border-radius: 5px;
         cursor: pointer;
-        color: white;
-        padding: 4px 0;
-        margin-top: 8px;
+        font-size: 16px;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
     }
 
-    span {
-        font-size: 20px;
+    .specialty-body {
+      .specialty-child {
+        text-align: center;
+        margin-bottom: 20px; /* Thêm khoảng cách giữa các mục */
+
+        .bg-image {
+          width: 200px;
+          height: 150px;
+          background-size: cover;
+          background-position: center;
+          border-radius: 10px;
+          overflow: hidden;
+          margin: 0 auto; /* Căn giữa */
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Giữ tỷ lệ và cắt để vừa khung */
+          }
+        }
+
+        .specialty-name {
+          margin-top: 10px;
+          font-size: 18px;
+          font-weight: bold;
+          color: #333;
+        }
+      }
     }
   }
-
-  .specialty-body {
-    // border: 1px solid rgb(192, 226, 21);
-    height: 100%;
-    width: 25%;
-
-    img {
-      display: block;
-      height: 100%;
-      width: 70%;
-    //   border: 1px solid rgb(255, 0, 195);
-      margin: 16px 0 ;
-    }
-  }
-}
-
-.slick-arrow.slick-prev {
-  left: 0 !important;
-  background: #68d3ee;
-  z-index: 1;
-  height: 48px !important;
-  width: 44px !important;
-  left: -10px !important;
-
-  &:hover {
-    background: rgb(194, 194, 194);
-    color: rgb(255, 255, 255) !important;
-  }
-}
-.slick-arrow.slick-prev::before {
-  font-family: "Font Awesome 5 Free" !important;
-  color: rgb(255, 255, 255) !important;
-}
-
-.slick-arrow.slick-next {
-  right: 0 !important;
-  background: #68d3ee;
-  height: 48px !important;
-  width: 44px !important;
-
-  &:hover {
-    background: rgb(194, 194, 194);
-    color: rgb(255, 255, 255) !important;
-  }
-}
-.slick-arrow.slick-next::before {
-  font-family: "Font Awesome 5 Free" !important;
-  color: rgb(255, 255, 255) !important;
 }

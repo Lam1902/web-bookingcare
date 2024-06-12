@@ -37,11 +37,11 @@
             } 
         },
         "admin": {
-            "manage-user": "Quản lý người dùng",
-            "manage-doctor": "Quản lý bác sĩ",
+            "manage-user": "Quản lý thông tin",
+            "manage-doctor": "Hồ sơ bác sĩ",
             "manage-account": "Quản lý tài khoản",
             "crud": "CRUD user",
-            "crud-redux":"CRUD Redux",
+            "crud-redux":"Quản lý người dùng",
             "clinic":"Phòng khám",
             "manage-clinic":"Quản lý phòng khám",
             "specialty":"Chuyên khoa",
@@ -49,6 +49,10 @@
             "handbook":"Cẩm nang",
             "manage-handbook":"Quản lý cẩm nang"
             
+          },
+          "doctor": {
+            "manage-schedule": "Quản lý lịch khám bệnh",
+            "manage-patient": "Quản lý bệnh nhân"
           }
     },
     "manage-user": {
@@ -67,7 +71,29 @@
         "edit":"Cập nhật",
         "title-1":"Quản lý người dùng",
         "title-2":"Danh sách người dùng"
+    },
+    "manage-schedule": {
+        "title": "Quản lí lịch khám bệnh"
+    },
+    "patient": {
+        "detail-doctor": {
+            "schedule":"Lịch khám",
+            "none-schedule":"Bác sĩ không có lịch trong thời gian này.",
+            "choose":"Chọn",
+            "book-free":" và đặt (miễn phí)"
+
+        }
+    },
+    "admin": {
+        "manage-doctor": {
+            "title": "Tạo thông tin bác sĩ",
+            "select-doctor":"Chọn bác sĩ",
+            "intro":"Thông tin giới thiệu",
+            "add":"Tạo thông tin",
+            "save":"Lưu thông tin"
+        }
     }
+    
    
    
 }

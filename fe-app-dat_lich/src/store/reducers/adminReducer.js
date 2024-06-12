@@ -7,6 +7,10 @@ const initialState = {
   isLoadingGender: false,
   users: [],
   topDoctor: [],
+  listDoctor: [],
+  inforDoctor: {},
+  doctorSchedule: [],
+  thongtinthem: {},
 };
 
 const adminReducer = (state = initialState, action) => {
@@ -72,6 +76,46 @@ const adminReducer = (state = initialState, action) => {
       };
     case actionTypes.GET_TOP_DOCTOR_FAIL:
       state.topDoctor = [];
+      return {
+        ...state,
+      };
+    case actionTypes.GET_ALL_DOCTOR_SUCCESS:
+      state.listDoctor = action.dataDt;
+      return {
+        ...state,
+      };
+    case actionTypes.GET_ALL_DOCTOR_FAIL:
+      state.listDoctor = [];
+      return {
+        ...state,
+      };
+    case actionTypes.GET_INFO_DOCTOR_SUCCESS:
+      state.inforDoctor = action.infDoctor;
+      return {
+        ...state,
+      };
+    case actionTypes.GET_INFO_DOCTOR_FAIL:
+      state.inforDoctor = {};
+      return {
+        ...state,
+      };
+    case actionTypes.GET_ALLCODE_TIME_SUCCESS:
+      state.doctorSchedule = action.dtschedule;
+      return {
+        ...state,
+      };
+    case actionTypes.GET_ALLCODE_TIME_FAIL:
+      state.doctorSchedule = [];
+      return {
+        ...state,
+      };
+    case actionTypes.FETCH_REQUIRED_DOCTOR_INFOR_SUCCESS:
+      state.thongtinthem = action.datamore;
+      return {
+        ...state,
+      };
+    case actionTypes.FETCH_REQUIRED_DOCTOR_INFOR_FAILED:
+      state.thongtinthem = {};
       return {
         ...state,
       };

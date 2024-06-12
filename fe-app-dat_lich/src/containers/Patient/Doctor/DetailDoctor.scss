@@ -1,0 +1,65 @@
+.doctor-detail {
+  // border: 1px solid red;
+  margin: 100px 10% 0 10%;
+  width: 80%;
+  margin-bottom: 200px;
+  background-image: url('http://localhost:3000/static/media/140309-background3.00625352.png');
+  border-radius: 12px;
+  color: black;
+
+  .intro-doctor {
+    display: flex;
+    width: 100%;
+    height: 230px;
+    border-bottom: 4px solid rgb(235, 0, 0);
+    margin-top: 4%;
+    margin-bottom: 4%;
+    .intro-doctor-left {
+      width: 24%;
+      // border: 1px solid green;
+      margin-top: 1%;
+      .doctor-image {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        margin: 16px 0 ;
+        margin: auto;
+        background-position: center; /* Căn chỉnh vị trí ở giữa */
+        background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh nền */
+        background-size: cover; /* Đảm bảo hình ảnh nền sẽ phủ toàn bộ phần tử */
+      }
+    }
+    .intro-doctor-right {
+      margin-top: 1%;
+      width: 70%;
+      // border: 1px solid rgb(17, 36, 121);
+      margin-top: 4%;
+      margin-left: 20px;
+    }
+  }
+
+  .detail-infor-doctor {
+    padding: 0 6rem;
+  }
+}
+
+.schedule-doctor {
+  display: flex;
+  height: px;
+
+  .schedule-doctor-left {
+    // border-right: 1px solid black;
+    width: 50%;
+    display: flex;
+    margin: 0 20px 12px 12px;
+    border-radius: 20px;
+    background: #ffffca;
+}
+.schedule-doctor-rigth {
+  text-align: center;
+  width: 50%;
+  
+
+}
+
+}

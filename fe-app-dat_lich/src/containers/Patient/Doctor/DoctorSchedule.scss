@@ -1,0 +1,28 @@
+.doctor-schedule-container {
+    width: 30%;
+    height: 2rem;
+    // border: 1px solid red;
+    margin: 0 0 20px 84px;
+    .all-schedule {
+        margin: 10px 0 0 10px
+    }
+}
+
+.time-btn {
+    background: #0759d4;
+    border: none;
+    padding: 4px 8px;
+    margin: 4px 8px;
+    color: white;
+    border-radius: 7px;
+    min-width: 100px;
+
+    &:hover {
+        background-color: #1774ff;
+    }
+}
+
+.title-calendar {
+    display: block;
+    margin: 12px 0 4px 12px;
+}

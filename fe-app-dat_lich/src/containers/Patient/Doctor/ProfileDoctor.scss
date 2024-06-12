@@ -1,0 +1,18 @@
+
+  .intro-doctor {
+    display: flex;
+    .content-left {
+        min-width: 100px;
+        height: 100px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%; /* Tùy chọn nếu bạn muốn ảnh là hình tròn */
+      }
+
+      .content-right {
+        margin: 18px 0 0 20px;
+      
+      }
+  } 
+
+      

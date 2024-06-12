@@ -47,6 +47,9 @@
       "manage-specialty": "Manage Specialties",
       "handbook": "Handbook",
       "manage-handbook": "Manage Handbooks"
+    },
+    "doctor": {
+      "manage-schedule": "Manage schedule"
     }
   },
   "manage-user": {
@@ -62,8 +65,27 @@
     "role": "Role",
     "image": "Image",
     "save": "Save",
-    "title-1":"Manage User LamJS",
-    "edit":"Update"
-}
-
+    "title-1": "Manage User LamJS",
+    "edit": "Update"
+  },
+  "manage-schedule": {
+    "title": "Manage doctor schedule"
+  },
+  "patient": {
+    "detail-doctor": {
+      "schedule": "Schedule",
+      "none-schedule": "The doctor has no schedule at this time.",
+      "choose": "Choose",
+      "book-free": " and book (free)"
+    }
+  },
+  "admin": {
+    "manage-doctor": {
+      "title": "Create additional doctor information",
+      "select-doctor": "Select doctor",
+      "intro": "Introduction information",
+      "add": "Create information",
+      "save": "Save information"
+    }
+  }
 }

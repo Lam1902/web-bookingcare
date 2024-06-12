@@ -1,0 +1,75 @@
+.manage-doctor-title {
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 19px;
+
+
+}
+    .btn-save {
+        margin: 12px 0 0 0;
+        outline: nonn;
+        outline: none;
+        border: none;
+        background-color: #43a25b;
+        color: white;
+        border-radius: 7px;
+        padding: 7px;
+
+        &:hover {
+            background-color: #53b96c;
+        }
+    }
+
+    .btn-create {
+        margin: 12px 0 0 0;
+        outline: nonn;
+        outline: none;
+        border: none;
+        background-color: #5f6cfa;
+        color: white;
+        border-radius: 7px;
+        padding: 7px;
+
+        &:hover {
+            background-color: #2595f8;
+        }
+    }
+.doctor-item {
+    display: flex;
+
+    .content-left {
+        width: 40%;
+        margin: 0 12px 20px 0;
+    }
+
+    .content-right {
+        width: 60%;
+        margin: 0 0 20px 0;
+    }
+
+   
+}
+
+.manage-doctor {
+    background-color: #1058a0;
+    color: rgb(0, 0, 0);
+    width: 70%;
+    border-radius: 12px;
+    padding:20px;
+    margin-top: 20px; 
+    label {
+        margin-bottom: 8px;
+    }
+}
+
+label {
+    color: white;
+}
+
+.tb-1 {
+    margin: 12px 0 20px 0;
+}
+
+.chon-chuyen-khoa {
+    color: black;
+}
